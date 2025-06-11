@@ -34,7 +34,7 @@ DROP TABLE  IF EXISTS vapes;
 CREATE TABLE IF NOT EXISTS vapes(
 	id_vape int PRIMARY KEY AUTO_INCREMENT,
     id_marca int  NOT NULL,
-    sabor ENUM NOT NULL, --enum
+    sabor ENUM NOT NULL, -- enum
     caladas varchar(10) NOT NULL,
     
     -- creamos la clave foranea
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS ventas(
 	id_vape int PRIMARY KEY NOT NULL,
     id_cliente int PRIMARY KEY NOT NULL,
     id_oferta int PRIMARY KEY NOT NULL,
-    fecha date NOT NULL,,
+    fecha date NOT NULL,
     precio_venta int not null,
     cantidad_vendida int NOT NULL,
     
