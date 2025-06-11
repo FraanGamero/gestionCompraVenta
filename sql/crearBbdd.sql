@@ -34,7 +34,7 @@ DROP TABLE  IF EXISTS vapes;
 CREATE TABLE IF NOT EXISTS vapes(
 	id_vape int PRIMARY KEY AUTO_INCREMENT,
     id_marca int  NOT NULL,
-    sabor varchar(20) NOT NULL,
+    sabor ENUM NOT NULL, --enum
     caladas varchar(10) NOT NULL,
     
     -- creamos la clave foranea
@@ -56,10 +56,11 @@ CREATE TABLE IF NOT EXISTS ofertas(
 -- duda, precio venta en la tabla ventas?
 DROP TABLE IF EXISTS ventas;
 CREATE TABLE IF NOT EXISTS ventas(
-	id_vape int NOT NULL,
-    id_cliente int NOT NULL,
-    id_oferta int NOT NULL,
-    fecha date NOT NULL,
+	id_vape int PRIMARY KEY NOT NULL,
+    id_cliente int PRIMARY KEY NOT NULL,
+    id_oferta int PRIMARY KEY NOT NULL,
+    fecha date NOT NULL,,
+    precio_venta int not null,
     cantidad_vendida int NOT NULL,
     
     -- creamos las claves foraneas
@@ -78,12 +79,12 @@ CREATE TABLE IF NOT EXISTS proveedores(
     tlf_proveedor varchar(20) DEFAULT NULL
 );
 
--- CREAMOS LA TABLA COMPRAS
+-- CREAMOS LA TABLA COMPRAS 7 
 
 DROP TABLE IF EXISTS compras;
 CREATE TABLE IF NOT EXISTS compras(
-	id_proveedor int NOT NULL,
-    id_vape int NOT null,
+	id_proveedor int PRIMARY KEY NOT NULL,
+    id_vape int PRIMARY KEY NOT null,
     cantidad_unidades_compradas int NOT NULL,
     precio_unidad int NOT NULL,
     coste_envio int DEFAULT null,
