@@ -34,8 +34,7 @@ DROP TABLE  IF EXISTS vapes;
 CREATE TABLE IF NOT EXISTS vapes(
 	id_vape int PRIMARY KEY AUTO_INCREMENT,
     id_marca int  NOT NULL,
-    -- enum
-    sabor ENUM NOT NULL,
+    sabor ENUM('banna pinneaple melon'),
     caladas varchar(10) NOT NULL,
     
     -- creamos la clave foranea
@@ -57,13 +56,14 @@ CREATE TABLE IF NOT EXISTS ofertas(
 -- duda, precio venta en la tabla ventas?
 DROP TABLE IF EXISTS ventas;
 CREATE TABLE IF NOT EXISTS ventas(
-	id_vape int PRIMARY KEY NOT NULL,
-    id_cliente int PRIMARY KEY NOT NULL,
-    id_oferta int PRIMARY KEY NOT NULL,
+	id_vape 	int 	 NOT NULL,
+    id_cliente 	int 	 NOT NULL,
+    id_oferta	 int 	 NOT NULL,
     fecha date NOT NULL,
     precio_venta int not null,
     cantidad_vendida int NOT NULL,
     
+    PRIMARY KEY(id_vape,id_cliente,id_oferta),
     -- creamos las claves foraneas
     CONSTRAINT fk_id_vape_ventas FOREIGN KEY(id_vape) REFERENCES vapes(id_vape) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_id_cliente_ventas FOREIGN KEY(id_cliente) REFERENCES clientes(id_cliente) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -84,12 +84,14 @@ CREATE TABLE IF NOT EXISTS proveedores(
 
 DROP TABLE IF EXISTS compras;
 CREATE TABLE IF NOT EXISTS compras(
-	id_proveedor int PRIMARY KEY NOT NULL,
-    id_vape int PRIMARY KEY NOT null,
+	id_proveedor int 	 NOT NULL,
+    id_vape 	int	 		 NOT null,
     cantidad_unidades_compradas int NOT NULL,
     precio_unidad int NOT NULL,
     coste_envio int DEFAULT null,
     coste_comision int DEFAULT NULL,
+    
+    PRIMARY KEY(id_proveedor,id_vape),
     
     CONSTRAINT fk_id_proveedor_compras FOREIGN KEY (id_proveedor) REFERENCES proveedores(id_proveedor) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT fk_id_vape_compras FOREIGN KEY (id_vape) REFERENCES vapes(id_vape) ON DELETE CASCADE ON UPDATE CASCADE    
