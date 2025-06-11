@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS ventas(
 	id_vape 	int 	 NOT NULL,
     id_cliente 	int 	 NOT NULL,
     id_oferta	 int 	 NOT NULL,
-    fecha date NOT NULL,
+    fecha_venta date NOT NULL,
     precio_venta int not null,
     cantidad_vendida int NOT NULL,
     
@@ -87,6 +87,7 @@ CREATE TABLE IF NOT EXISTS compras(
 	id_proveedor int 	 NOT NULL,
     id_vape 	int	 		 NOT null,
     cantidad_unidades_compradas int NOT NULL,
+    fecha_compra date not null,
     precio_unidad int NOT NULL,
     coste_envio int DEFAULT null,
     coste_comision int DEFAULT NULL,
