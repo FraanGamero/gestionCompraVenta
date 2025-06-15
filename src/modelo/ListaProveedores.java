@@ -27,6 +27,16 @@ public class ListaProveedores {
 		opcionesProveedor.add("nombre proveedor");
 		opcionesProveedor.add("tlf proveedor");
 	}
+	
+	
+	
+	public String[] getColumnas() {
+		return columnas;
+	}
+
+	public DefaultTableModel crearTablaProveedores() {
+		return tablaProveedores= new DefaultTableModel(columnas,0);
+	}
 
 	public DefaultTableModel getTablaProveedores() {
 		return tablaProveedores;

@@ -14,6 +14,7 @@ public class ListaVapes {
 		"id_vape",
 		"id_marca",
 		"sabor",
+		"marca",
 		"caladas"
 	};
 	
@@ -28,12 +29,13 @@ public class ListaVapes {
 	private void crearOpcionesVapes() {
 		// TODO Auto-generated method stub
 		opcionesVapes= new ArrayList<String>();
-		opcionesVapes.add("sabor");
-		opcionesVapes.add("caladas");
+		opcionesVapes.add("Sabor");
+		opcionesVapes.add("Marca");
+		opcionesVapes.add("Caladas");
 	}
 
 	public DefaultTableModel getTablaVapes() {
-		return tablaVapes;
+		return new DefaultTableModel(columnas,0);
 	}
 
 	public ArrayList<String> getOpcionesVapes() {

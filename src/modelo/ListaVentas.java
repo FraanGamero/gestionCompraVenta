@@ -18,7 +18,7 @@ public class ListaVentas {
 	private ArrayList<String> opcionesVentas;
 	
 	public ListaVentas() {
-		this.tablaVentas= new DefaultTableModel(columnas,0);
+//		this.tablaVentas= new DefaultTableModel(columnas,0);
 		
 		crearOpcionesVenta();
 	}
@@ -35,8 +35,10 @@ public class ListaVentas {
 		opcionesVentas.add("cantidad");
 	}
 
+
+	
 	public DefaultTableModel getTablaVentas() {
-		return tablaVentas;
+		return new DefaultTableModel(columnas,0);
 	}
 
 	public ArrayList<String> getOpcionesVentas() {

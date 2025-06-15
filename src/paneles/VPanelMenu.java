@@ -1,4 +1,4 @@
-package vista;
+package paneles;
 
 import java.awt.FlowLayout;
 import java.util.ArrayList;
@@ -31,6 +31,7 @@ public class VPanelMenu extends JPanel{
 	private void propiedades() {
 		// TODO Auto-generated method stub
 		setLayout(new FlowLayout());
+//		setVisible(false);
 	}
 	
 	public void crearBotonesMenu(String texto) {

@@ -32,9 +32,15 @@ public class ListaOfertas {
 		opcionesOfertas.add("descripcion oferta");
 		opcionesOfertas.add("precio oferta");
 	}
+	
+	
+
+	public String[] getColumnas() {
+		return columnas;
+	}
 
 	public DefaultTableModel getTablaOfertas() {
-		return tablaOfertas;
+		return new DefaultTableModel(columnas,0);
 	}
 
 	public ArrayList<String> getOpcionesOfertas() {

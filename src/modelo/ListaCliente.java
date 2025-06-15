@@ -64,6 +64,11 @@ public class ListaCliente {
 	public void setOpcionesClientes(ArrayList<String> opcionesClientes) {
 		this.opcionesClientes = opcionesClientes;
 	}
+
+	public ArrayList<String> getOpcionesClientes() {
+		return opcionesClientes;
+	}
+	
 	
 	
 	

@@ -28,14 +28,33 @@ public class ListaMarcas {
 		
 		opcionesMarcas.add("Nombre marca");
 	}
+	
+	
+
+	public String[] getColumnas() {
+		return columnas;
+	}
 
 	public DefaultTableModel getTablaMarcas() {
-		return tablaMarcas;
+		return new DefaultTableModel(columnas,0);
 	}
 
 	public ArrayList<String> getOpcionesMarcas() {
 		return opcionesMarcas;
 	}
+
+	public void setTablaMarcas(DefaultTableModel tablaMarcas) {
+		this.tablaMarcas = tablaMarcas;
+	}
+
+	public void setColumnas(String[] columnas) {
+		this.columnas = columnas;
+	}
+
+	public void setOpcionesMarcas(ArrayList<String> opcionesMarcas) {
+		this.opcionesMarcas = opcionesMarcas;
+	}
+	
 	
 	
 }
